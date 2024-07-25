@@ -1,11 +1,31 @@
-/* eslint-disable */
-import "bootstrap";
-import "./style.css";
+let simbolos = ["♦", "♥", "♠", "♣"];
+let numeros = [
+  "A",
+  "2",
+  "3",
+  "4",
+  "5",
+  "6",
+  "7",
+  "8",
+  "9",
+  "10",
+  "J",
+  "Q",
+  "K"
+];
 
-import "./assets/img/rigo-baby.jpg";
-import "./assets/img/4geeks.ico";
+function displayCard() {
+  let simbolosCarta = simbolos[Math.floor(Math.random() * simbolos.length)];
+  let simpleNumeros = numeros[Math.floor(Math.random() * numeros.length)];
+  let showCarta = `${simbolosCarta} ${simpleNumeros}`;
 
-window.onload = function() {
-  //write your code here
-  console.log("Hello Rigo from the console!");
-};
+  let element = document.getElementById("showing");
+  if (element) {
+    element.style.background = "blue"; // Usa comillas alrededor del color
+    element.style.color = "black"; // Ajusta el color del texto para mejorar la legibilidad
+    element.style.padding = "10px"; // Añade algo de padding para que el texto no toque los bordes
+    element.style.borderRadius = "5px"; // Añade esquinas redondeadas
+    element.innerHTML = showCarta;
+  }
+}
